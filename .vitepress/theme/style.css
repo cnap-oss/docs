@@ -4,6 +4,18 @@
  */
 
 /**
+ * Custom Pixel Font
+ * -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "NeoDunggeunmo Pro";
+  src: url("./assets/fonts/NeoDunggeunmoPro-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
  * Custom Color Palette
  * - Atmosphere Blue: #1A1A2E - Dark background
  * - Cyber Teal: #00E5C9 - Primary brand color
@@ -35,6 +47,17 @@
   --vp-c-bg-alt: #f6f6f7;
   --vp-c-bg-elv: #ffffff;
   --vp-c-bg-soft: #f6f6f7;
+
+  /* Pixel Font */
+  --vp-font-family-base: "NeoDunggeunmo Pro", monospace, ui-monospace,
+    SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New";
+  --vp-font-family-mono: "NeoDunggeunmo Pro", monospace, ui-monospace,
+    SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New";
+
+  /* Logo size */
+  --vp-nav-logo-height: 64px;
 }
 
 /**
@@ -88,13 +111,13 @@
 
 :root {
   --vp-button-brand-border: transparent;
-  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-text: #000000;
   --vp-button-brand-bg: var(--vp-c-brand-3);
   --vp-button-brand-hover-border: transparent;
-  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-text: #000000;
   --vp-button-brand-hover-bg: var(--vp-c-brand-2);
   --vp-button-brand-active-border: transparent;
-  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-text: #000000;
   --vp-button-brand-active-bg: var(--vp-c-brand-1);
 }
 
@@ -147,4 +170,189 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+/**
+ * Pixel Theme Background
+ * -------------------------------------------------------------------------- */
+
+.VPDoc,
+.VPHome {
+  background-image: url("./assets/cnap-bg-light.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.dark .VPDoc,
+.dark .VPHome {
+  background-image: url("./assets/cnap-bg-dark.jpeg");
+}
+
+/**
+ * Hero Section Customization
+ * -------------------------------------------------------------------------- */
+
+.VPHero .container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 48px 24px;
+  margin: 0 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .VPHero .container {
+  background: rgba(26, 26, 46, 0.85);
+  box-shadow: 0 8px 32px rgba(0, 229, 201, 0.1);
+}
+
+.VPHero .image-container {
+  display: none;
+}
+
+/**
+ * Features Section Customization
+ * -------------------------------------------------------------------------- */
+
+.VPFeatures {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  margin: 48px 24px;
+  border-radius: 16px;
+  padding: 48px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .VPFeatures {
+  background: rgba(26, 26, 46, 0.85);
+  box-shadow: 0 8px 32px rgba(0, 229, 201, 0.1);
+}
+
+.VPFeature {
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px solid var(--vp-c-brand-3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.dark .VPFeature {
+  background: rgba(32, 32, 48, 0.6);
+  border-color: var(--vp-c-brand-2);
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 229, 201, 0.3);
+  border-color: var(--vp-c-brand-1);
+}
+
+/**
+ * Content Container
+ * -------------------------------------------------------------------------- */
+
+.VPDoc .container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 32px;
+  margin: 24px auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .VPDoc .container {
+  background: rgba(26, 26, 46, 0.95);
+  box-shadow: 0 8px 32px rgba(0, 229, 201, 0.1);
+}
+
+/**
+ * Pixel Effects
+ * -------------------------------------------------------------------------- */
+
+.VPButton {
+  font-family: "NeoDunggeunmo Pro", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid currentColor;
+  transition: all 0.2s ease;
+}
+
+.VPButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--vp-c-brand-3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "NeoDunggeunmo Pro", monospace;
+  letter-spacing: 0.02em;
+}
+
+.name {
+  font-family: "NeoDunggeunmo Pro", monospace !important;
+}
+
+/**
+ * Home Page Custom Content
+ * -------------------------------------------------------------------------- */
+
+/* Home page additional content after features */
+.VPHome .VPHomeContent {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.VPHome .content {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 48px 32px;
+  margin: 48px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .VPHome .content {
+  background: rgba(26, 26, 46, 0.85);
+  box-shadow: 0 8px 32px rgba(0, 229, 201, 0.1);
+}
+
+/* More specific selector for home page content */
+.Layout.VPHomeLayout .VPContent > div:not(.VPHero):not(.VPFeatures) {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 48px 32px;
+  margin: 48px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .Layout.VPHomeLayout .VPContent > div:not(.VPHero):not(.VPFeatures) {
+  background: rgba(26, 26, 46, 0.85);
+  box-shadow: 0 8px 32px rgba(0, 229, 201, 0.1);
+}
+
+/* Target the actual content wrapper */
+.vp-doc.container > .content-container,
+.VPHome .vp-doc > div {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 48px 32px;
+  margin: 48px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .vp-doc.container > .content-container,
+.dark .VPHome .vp-doc > div {
+  background: rgba(26, 26, 46, 0.85);
+  box-shadow: 0 8px 32px rgba(0, 229, 201, 0.1);
+}
+
+.VPNavBarTitle .title {
+  font-size: 1.5rem;
 }
